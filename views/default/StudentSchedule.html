@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+
+
+<h1>My Courses</h1>
+
+
+ <table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th scope="col">regId</th>
+      <th scope="col">student id</th>
+      <th scope="col">Course Code</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Course Instructor</th>
+      <th scope="col">Course ScheduleId</th>
+      <th scope="col">Course startTime</th>
+      <th scope="col">Course endTime</th>
+      <th scope="col">Course RoomNo</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  	{{for regcourse in regcourses:}}
+	    <tr>
+	      <td>{{=regcourse['id']}}</td>
+	      <td>{{=regcourse['studentId']}}</td>
+	      <td>{{=regcourse['courseId']}}</td>
+	      <td>{{=regcourse['name']}}</td>
+	      <td>{{=regcourse['instructor']}}</td>
+	      <td>{{=regcourse['scheduleid']}}</td>
+	      <td>{{=regcourse['startTime']}}</td>
+	      <td>{{=regcourse['endTime']}}</td>
+	      <td>{{=regcourse['RoomNo']}}</td>
+	      <td><a href="delete?id={{=regcourse['id']}}" class="btn btn-danger">Delete</a></td>
+
+	    </tr>
+    {{pass}}
+  </tbody>
+</table> 
+
+
+

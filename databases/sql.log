@@ -1,0 +1,315 @@
+timestamp: 2023-04-30T11:35:33.010024
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2023-04-30T11:35:33.028968
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2023-04-30T11:35:33.055036
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2023-04-30T11:35:33.067939
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2023-04-30T11:35:33.078004
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2023-04-30T11:35:33.086499
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2023-05-01T07:58:34.937990
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-01T08:09:30.793258
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-01T08:09:32.780843
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-01T08:09:33.647180
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-01T08:20:32.704625
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-01T08:20:35.291886
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-01T10:48:15.450399
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-09T05:27:50.475382
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-09T05:27:50.481399
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-13T09:27:04.920778
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-13T09:27:04.927543
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-13T09:28:17.968126
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-13T10:58:49.173652
+CREATE TABLE "courses"(
+    "code" CHAR(512) NOT NULL,
+    "name" CHAR(512),
+    "description" CHAR(512),
+    "prerequisites" CHAR(reference courses),
+    "instructor" CHAR(512),
+    "capacity" INTEGER,
+    "scheduleid" INTEGER,
+    PRIMARY KEY("code")) ;
+timestamp: 2023-05-13T18:10:03.903883
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-13T18:10:04.801533
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-13T18:11:03.425763
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-13T18:11:04.408358
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-13T18:11:04.734596
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-13T18:12:32.481751
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `username` VARCHAR(128),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-13T18:12:32.596600
+CREATE TABLE `auth_group`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `role` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-13T18:12:32.672087
+CREATE TABLE `auth_membership`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-13T18:12:32.750799
+CREATE TABLE `auth_permission`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    `name` VARCHAR(512),
+    `table_name` VARCHAR(512),
+    `record_id` INTEGER,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-13T18:12:32.832994
+CREATE TABLE `auth_event`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `time_stamp` DATETIME,
+    `client_ip` VARCHAR(512),
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `origin` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-13T18:12:32.919002
+CREATE TABLE `auth_cas`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `created_on` DATETIME,
+    `service` VARCHAR(512),
+    `ticket` VARCHAR(512),
+    `renew` CHAR(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-13T20:14:42.419318
+ALTER TABLE `auth_user` DROP COLUMN `username`;
+success!

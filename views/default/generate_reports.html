@@ -1,0 +1,13 @@
+<!-- generate_reports.html -->
+
+{{extend 'layout.html'}}
+
+{{block content}}
+  <h2>Reports</h2>
+  
+  <h3>Enrollment Report</h3>
+  <img src="{{=URL('static', args=['enrollment_report.png'])}}" alt="Enrollment Report">
+
+  <h3>Popularity Report</h3>
+  <img src="{{=URL('static', args=['popularity_report.png'])}}" alt="Popularity Report">
+{{end}}

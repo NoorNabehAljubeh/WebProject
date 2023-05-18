@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+
+{{for course in courses:}}
+<h5>{{=course['code']}}</h5>
+<h2>{{=course['name']}}</h2>
+{{pass}}

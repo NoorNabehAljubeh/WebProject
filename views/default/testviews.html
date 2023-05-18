@@ -1,0 +1,23 @@
+
+<h1>Test</h1>
+
+{{i=10}}
+
+{{if i>=10:}}
+
+<h2>i is equal or bigger than 10 </h2>
+
+{{else:}}
+
+<h2>i is less than 10</h2>
+{{pass}}
+
+{{=DIV('thisisatest', _id='123', _class='myclass')}}
+
+{{=A('click me', callback=URL('myaction'))}}
+
+{{=FORM(INPUT(_type='submit'), _action='', _method='post')}}
+
+{{for v in ['a', 'b', 'c']:}}
+{{=INPUT(_type='radio', _name='test', _value=v, value='b')}}
+{{pass}}

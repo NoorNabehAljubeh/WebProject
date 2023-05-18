@@ -1,0 +1,28 @@
+<!-- views/default/index.html -->
+
+<h1>Deadlines</h1>
+
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Deadline Date</th>
+    </tr>
+    {{ for deadline in deadlines: }}
+    <tr>
+        <td>{{= deadline.description }}</td>
+        <td>{{= deadline.deadline_date }}</td>
+    </tr>
+    {{ pass }}
+</table>
+
+<h2>Add Deadline</h2>
+
+<form method="post" action="{{= URL('deadline', 'add_deadline') }}">
+    <label for="description">Description:</label>
+    <input type="text" name="description" id="description" required>
+    <br>
+    <label for="deadline_date">Deadline Date:</label>
+    <input type="datetime-local" name="deadline_date" id="deadline_date" required>
+    <br>
+    <input type="submit" value="Add Deadline">
+</form>
